@@ -94,6 +94,9 @@ namespace ControllerTests
         protected HttpResponseMessage Post(string relativeUrl, object content, bool useHttps = false, params Tuple<string, string>[] additionalHeaders)
         { return SendMessage(HttpMethod.Post, relativeUrl, content, useHttps, additionalHeaders); }
 
+        protected HttpResponseMessage Patch(string relativeUrl, object content, bool useHttps = false, params Tuple<string, string>[] additionalHeaders)
+        { return SendMessage(new HttpMethod("PATCH"), relativeUrl, content, useHttps, additionalHeaders); }
+
         protected HttpResponseMessage Put(string relativeUrl, object content, bool useHttps = false, params Tuple<string, string>[] additionalHeaders)
         { return SendMessage(HttpMethod.Put, relativeUrl, content, useHttps, additionalHeaders); }
 
